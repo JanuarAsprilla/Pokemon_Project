@@ -1,7 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const BoxContainer = styled.div`
   background-color: ${(props) => props.backgroundColor};
+  background-image: ${(props) => props.backgroundImage};
+  background-size: ${(props) => props.backgroundSize};
+  background-position: ${(props) => props.backgroundPosition};
+  background-repeat: ${(props) => props.backgroundRepeat};
   border-radius: ${(props) => props.borderRadius};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
@@ -35,6 +39,7 @@ const BoxContainer = styled.div`
   border-right: ${(props) => props.borderRight};
   border-bottom: ${(props) => props.borderBottom};
   border-left: ${(props) => props.borderLeft};
+
   &:hover {
     box-shadow: ${(props) => props.hoverBoxShadow};
     background-color: ${(props) => props.hoverBackgroundColor};
@@ -51,6 +56,27 @@ const BoxContainer = styled.div`
     border-radius: ${(props) => props.hoverBorderRadius};
     border: ${(props) => props.hoverBorder};
   }
-`
 
-export { BoxContainer }
+  &::before {
+    content: ${(props) => props.beforeContent};
+    position: ${(props) => props.beforePosition};
+    top: ${(props) => props.beforeTop};
+    left: ${(props) => props.beforeLeft};
+    width: ${(props) => props.beforeWidth};
+    height: ${(props) => props.beforeHeight};
+    background-image: ${(props) => props.beforeBackgroundImage};
+    background-size: ${(props) => props.beforeBackgroundSize};
+    background-position: ${(props) => props.beforeBackgroundPosition};
+    background-repeat: ${(props) => props.beforeBackgroundRepeat};
+    border-radius: ${(props) => props.beforeBorderRadius};
+    opacity: ${(props) => props.beforeOpacity};
+    z-index: ${(props) => props.beforeZIndex};
+  }
+
+  > * {
+    position: ${(props) => props.contentPosition};
+    z-index: ${(props) => props.contentZIndex};
+  }
+`;
+
+export { BoxContainer };

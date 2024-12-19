@@ -1,7 +1,7 @@
-import { BoxContainer } from './box'
+import { BoxContainer } from './box';
 
 const Box = ({ children, ...props }) => {
-  return <BoxContainer {...props}>{children}</BoxContainer>
-}
+  return <BoxContainer {...props}>{children}</BoxContainer>;
+};
 
-export default Box
+export default Box;
